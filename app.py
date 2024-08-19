@@ -13,6 +13,21 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
+@app.route("/")
+def index():
+    SORTING_OPTIONS = {"book": Book.query.order_by(Book.title).all(), 
+                       "author": Book.query.join(Author).order_by(Author.name).all()}
+
+    sorting_choice = request.args.get("sort")
+
+    if sorting_choice and sorting_choice in SORTING_OPTIONS:
+        books = SORTING_OPTIONS[sorting_choice]
+    else:
+        books = Book.query.all()
+
+    return render_template("home.html", books=books)
+
+
 @app.route("/add_author", methods=["GET", "POST"])
 def add_author():
     messages = []
@@ -46,9 +61,12 @@ def add_book():
             )
             db.session.add(book)
             db.session.commit()
-    except Exception:
+    except Exception as e:
         messages.append("Something went wrong!")
-    return render_template("add_book.html", messages=messages)
+        print(e)
+    
+    authors = Author.query.all()
+    return render_template("add_book.html", messages=messages, authors=authors)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5002)

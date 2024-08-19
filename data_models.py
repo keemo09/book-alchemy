@@ -17,4 +17,4 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     isbn = db.Column(db.Integer)
     title = db.Column(db.String)
-    author_id = db.Column(db.Integer, db.ForeignKey('author.id'), nullable=False)
+    author_id = db.Column(db.Integer, db.ForeignKey('authors.id'), nullable=False)
