@@ -1,0 +1,60 @@
+/* styles.css */
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Form Styles */
+form {
+    background-color: #1f1f1f; /* Slightly lighter dark background for the form */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #2e2e2e; /* Dark background for input fields */
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff; /* Primary button color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+h4 {
+    color: #ff6f61; /* Alert color for messages */
+}

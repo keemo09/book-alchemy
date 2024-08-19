@@ -1,0 +1,83 @@
+/* Grundlegende Stile für den gesamten Körper der Seite */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dunkler Hintergrund */
+    color: #e0e0e0; /* Helle Textfarbe */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stile für das Formular */
+form {
+    background-color: #1e1e1e; /* Dunkler Hintergrund für das Formular */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Stile für Labels und Eingabefelder im Formular */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+select, input[type="text"], input[type="submit"] {
+    background-color: #333333; /* Dunkler Hintergrund für Eingabefelder */
+    color: #e0e0e0;
+    border: 1px solid #444444;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: calc(100% - 22px);
+}
+
+input[type="submit"] {
+    background-color: #6200ea; /* Akzentfarbe für den Submit-Button */
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #3700b3; /* Dunklere Akzentfarbe beim Hover-Effekt */
+}
+
+/* Stile für die Buch-Container */
+div {
+    background-color: #1e1e1e; /* Dunkler Hintergrund für Buch-Container */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px;
+    width: calc(100% - 40px);
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #e0e0e0;
+}
+
+button {
+    background-color: #e53935; /* Akzentfarbe für den Delete-Button */
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b71c1c; /* Dunklere Akzentfarbe beim Hover-Effekt */
+}

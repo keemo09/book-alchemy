@@ -13,7 +13,6 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-<<<<<<< HEAD
 
 @app.route("/")
 def index():
@@ -23,27 +22,13 @@ def index():
 
     SORTING_OPTIONS = {"book": Book.query.filter(Book.title.like(search_pattern)).order_by(Book.title).all(), 
                        "author": Book.query.join(Author).filter(Book.title.like(search_pattern)).order_by(Author.name).all()}
-=======
-@app.route("/")
-def index():
-    SORTING_OPTIONS = {"book": Book.query.order_by(Book.title).all(), 
-                       "author": Book.query.join(Author).order_by(Author.name).all()}
-
-    sorting_choice = request.args.get("sort")
->>>>>>> fc185fbb1fc75690a9e8c803d44a3ab9aabe2f6f
 
     if sorting_choice and sorting_choice in SORTING_OPTIONS:
         books = SORTING_OPTIONS[sorting_choice]
     else:
-<<<<<<< HEAD
         books = Book.query.filter(Book.title.like(search_pattern)).all()
 
     return render_template("home.html", books=books, keyword=keyword)
-=======
-        books = Book.query.all()
-
-    return render_template("home.html", books=books)
->>>>>>> fc185fbb1fc75690a9e8c803d44a3ab9aabe2f6f
 
 
 @app.route("/add_author", methods=["GET", "POST"])
@@ -79,7 +64,6 @@ def add_book():
             db.session.commit()
     except Exception as e:
         messages.append("Something went wrong!")
-<<<<<<< HEAD
     
     authors = Author.query.all()
     return render_template("add_book.html", messages=messages, authors=authors)
@@ -94,12 +78,6 @@ def delete_book(book_id):
 
     
 
-=======
-        print(e)
-    
-    authors = Author.query.all()
-    return render_template("add_book.html", messages=messages, authors=authors)
->>>>>>> fc185fbb1fc75690a9e8c803d44a3ab9aabe2f6f
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=5002)
