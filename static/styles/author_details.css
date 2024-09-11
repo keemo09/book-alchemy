@@ -1,0 +1,40 @@
+/* Grundlegende Stile für das gesamte Dokument */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dunkler Hintergrund für den gesamten Body */
+    color: #e0e0e0; /* Heller Text für bessere Lesbarkeit */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container für das Layout */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Volle Höhe des Viewports */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Stile für die Details der Buchseite */
+.book-details {
+    background-color: #1e1e1e; /* Dunklerer Hintergrund für den Detailbereich */
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Schatten für einen modernen Look */
+}
+
+/* Stile für die Überschriften */
+h3 {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #333; /* Feine Linie unter den Überschriften */
+}
+
+/* Stile für die einzelnen Detailbereiche */
+.book-details div {
+    margin-top: 10px;
+}
