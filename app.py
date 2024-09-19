@@ -26,11 +26,20 @@ def index():
     search_pattern = f"%{keyword}%" if keyword else "%"
 
     # Dispatcher for the specific Sorting query
+    # SORTING_OPTIONS = {
+    #     "book": Book.query.filter(Book.title.like(search_pattern))
+    #     .order_by(Book.title)
+    #     .all(),
+    #     "author": Book.query.join(Author)
+    #     .filter(Book.title.like(search_pattern))
+    #     .order_by(Author.name)
+    #     .all(),
+    # }
     SORTING_OPTIONS = {
-        "book": Book.query.filter(Book.title.like(search_pattern))
+        "book": lambda: Book.query.filter(Book.title.like(search_pattern))
         .order_by(Book.title)
         .all(),
-        "author": Book.query.join(Author)
+        "author": lambda: Book.query.join(Author)
         .filter(Book.title.like(search_pattern))
         .order_by(Author.name)
         .all(),
@@ -39,7 +48,7 @@ def index():
     # Checks if a sorting choice value is given
     # If sorting choice given call sorting dispatcher with search pattern.
     if sorting_choice and sorting_choice in SORTING_OPTIONS:
-        books = SORTING_OPTIONS[sorting_choice]
+        books = SORTING_OPTIONS[sorting_choice]()
     else:
         books = Book.query.filter(Book.title.like(search_pattern)).all()
 

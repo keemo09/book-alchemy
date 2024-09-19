@@ -19,6 +19,7 @@
   <input type="text" id="title" name="title" required>
   <label for="author">Author:</label>
   <select name="author_id" id="author_id">
+    <option value="" selected disabled>Please select a author</option>
     {% for author in authors %}
     <option value="{{ author.id }}">{{ author.name }}</option>
     {% endfor %}

@@ -17,6 +17,10 @@
     <input type="text" name="keyword" id="keyword" efaultValue="{keyword}">
     <input type="submit" value="Search">
     </form>
+    <div class="container">
+        <a href="{{ url_for('add_book') }}"><button class="addbook-button">Add Book</button></a>
+        <a href="{{ url_for('add_author') }}"><button class="addauthor-button">Add Author</button></a>
+    </div>
     {% for book in books %}
     <div> <h3><a href="{{url_for('get_book', book_id=book.id)}}">{{ book.title }}</a> by <a href="{{ url_for('get_author', author_id=book.author.id) }}">{{ book.author.name }}</a></h3>
     <form action="{{ url_for('delete_book', book_id=book.id) }}" method="post">
